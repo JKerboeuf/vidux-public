@@ -1,0 +1,11 @@
+# shortcut to www
+www
+
+# netbeans project folder
+nbproject
+
+# visual studio code workspace file
+*.code-workspace
+
+# notes folders from Dreamweaver
+_notes
