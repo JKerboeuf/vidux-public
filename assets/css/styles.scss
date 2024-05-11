@@ -1,0 +1,581 @@
+//
+//	COLORS				/////
+//
+
+$col-green-100: #daf7dd;
+$col-green-75: #9ad89e;
+$col-green-50: #38ae4c;
+$col-green-25: #257530;
+$col-blue-100: #b7d9ea;
+$col-blue-75: #83b7cc;
+$col-blue-50: #406479;
+$col-blue-25: #2c4654;
+$col-gray-50: #565656;
+$col-red-50: #dc3545;
+
+//
+//	STANDARD ELEMENTS	/////
+//
+
+* {
+	color: $col-gray-50;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	color: $col-blue-25;
+}
+
+a {
+	cursor: pointer;
+	color: $col-green-50;
+	transition: ease-in-out 200ms;
+
+	&:hover,
+	&:focus {
+		color: $col-green-25;
+	}
+}
+
+.inner-shadow-top {
+	background-image: radial-gradient(80% 50% at 50% -10%,
+	#f6f6f6 0%,
+	#f6f6f600 100%);
+}
+
+//
+// BUTTONS				/////
+//
+
+.btn-primary {
+	background-color: $col-green-50 !important;
+	border-color: $col-green-50 !important;
+	box-shadow: none;
+	color: white !important;
+	transition: ease-in-out 200ms;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $col-green-25 !important;
+		border-color: $col-green-25 !important;
+	}
+
+	path {
+		color: white;
+	}
+}
+
+.btn-secondary {
+	background-color: white !important;
+	border-color: $col-green-50 !important;
+	border-width: .15rem;
+	box-shadow: none;
+	color: $col-gray-50 !important;
+	transition: ease-in-out 200ms;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: white !important;
+		border-color: $col-green-25 !important;
+	}
+
+	path {
+		color: $col-gray-50;
+	}
+}
+
+.btn-danger {
+	box-shadow: none;
+	color: white !important;
+	transition: ease-in-out 200ms;
+
+	path {
+		color: white;
+	}
+}
+
+.btn-inline {
+	display: inline-block;
+	padding: 0;
+	margin: 0 .5rem;
+	margin-bottom: .5rem;
+	color: $col-green-50;
+
+	path {
+		fill: $col-green-50;
+	}
+}
+
+.btn-link {
+	color: $col-green-50;
+
+	&:hover {
+		color: $col-green-25;
+	}
+}
+
+.dropdown-item:active {
+	background-color: $col-green-50;
+	color: white !important;
+}
+
+//
+//	MAIN CONTAINERS		/////
+//
+
+body, main,
+.main-container {
+	height: 100vh;
+	max-height: 100vh;
+}
+
+main {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.main-container {
+	width: 100vw;
+	display: flex;
+	background-color: white;
+	background-image: radial-gradient(90% 80% at 50% 50%,
+			rgb(244, 244, 244) 30%,
+			rgba(255, 255, 255, 0) 100%),
+		url(../img/bg_tile.png);
+}
+
+.main-window {
+	min-width: 30%;
+	min-height: 20%;
+	max-width: 90%;
+	max-height: 90%;
+	overflow: auto;
+	margin: auto;
+	padding: 1rem;
+	box-shadow: 0 0 .5rem rgba(0, 0, 0, .1);
+	background-color: white;
+	border-radius: .25rem;
+}
+
+.profile-window {
+	width: auto;
+	height: auto;
+	padding: 3rem;
+}
+
+.big-window {
+	height: 90%;
+	width: 90%;
+	padding: 1.5rem;
+}
+
+.lang-floating {
+	position: fixed;
+	right: 0;
+	top: 0;
+	margin-right: 1rem;
+	margin-top: 1rem;
+	box-shadow: 0 0 .5rem rgba(0, 0, 0, .1);
+
+	.dropdown-toggle {
+		border-radius: .25rem;
+	}
+
+	.active {
+		background-color: $col-green-50;
+
+		.dropdown-item {
+			color: white;
+
+			&:hover {
+				background-color: $col-green-50;
+			}
+		}
+	}
+}
+
+//
+//	HOME PAGE			/////
+//
+
+.home-container {
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-content: space-around;
+	overflow: scroll;
+
+	* {
+		text-decoration: none !important;
+	}
+
+	.page-card {
+		background-color: #f6f6f6;
+		padding: 1rem;
+		border-radius: .25rem;
+		box-shadow: 0 0 .5rem rgba(0, 0, 0, .1);
+		transition: all .3s ease-out;
+		width: 30%;
+
+		&:hover {
+			background-color: white;
+			box-shadow: 0 0 1.5rem $col-green-75;
+		}
+
+		.pc-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.pc-image {
+				width: auto;
+			}
+
+			button {
+				width: 100%;
+			}
+		}
+	}
+
+	&.items-4 .page-card {
+		width: 40%;
+	}
+}
+
+@media (orientation:portrait) {
+	.home-container .page-card {
+		width: 40%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.home-container .pc-image {
+		height: 10rem;
+	}
+}
+
+@media (max-width: 1200px) {
+	.home-container .pc-image {
+		height: 8rem;
+	}
+}
+
+@media (max-width: 992px) {
+	.home-container .pc-image {
+		height: 6rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.home-container {
+		h3 {
+			font-size: 1.3rem;
+		}
+
+		.pc-image {
+			height: 4rem;
+		}
+
+		&.items-4 .page-card {
+			width: 55%;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.home-container {
+		h3 {
+			font-size: 1rem;
+		}
+
+		.pc-image {
+			height: 2rem;
+		}
+	}
+}
+
+//
+//	FORMS				/////
+//
+
+.is-invalid .invalid-feedback {
+	display: block;
+}
+
+.invalid-feedback {
+	margin: 0;
+	margin-bottom: .5rem;
+}
+
+.form-control,
+.form-select {
+	background-color: $col-green-100 !important;
+	border: .1rem solid $col-blue-50 !important;
+	box-shadow: none !important;
+
+}
+
+.form-floating label::after {
+	background-color: $col-green-100 !important;
+}
+
+.input-group {
+
+	.form-control,
+	.input-group-text {
+		border: .1rem solid $col-blue-50;
+		border-radius: 0.5rem;
+		background-color: $col-green-100;
+		box-shadow: none !important;
+	}
+
+	.form-control {
+		border-left: none !important;
+	}
+
+	.input-group-text {
+		border-right: none !important;
+	}
+
+	.input-group-text {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	&.is-valid .form-control,
+	&.is-valid .input-group-text {
+		border-color: $col-green-50;
+	}
+
+	&.is-invalid .form-control,
+	&.is-invalid .input-group-text {
+		border-color: $col-red-50;
+	}
+}
+
+.form-floating:focus-within {
+	z-index: 2;
+}
+
+.btns-cancel-confirm {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+
+	.btn {
+		width: 40%;
+	}
+}
+
+//
+//	SIDEBAR				/////
+//
+
+.sidebar {
+	width: 17rem;
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+
+	.sb-nav {
+		flex-direction: column;
+		margin-bottom: auto;
+
+		.active {
+			background-color: $col-green-50;
+
+			.sb-link {
+				color: white;
+
+				path {
+					fill: white;
+				}
+			}
+		}
+	}
+
+	.sb-link {
+		text-decoration: none;
+		display: block;
+		padding: .5rem 1rem;
+
+		svg {
+			margin-right: .25rem;
+
+			path {
+				fill: $col-green-50;
+			}
+		}
+	}
+
+	.sb-header {
+		display: flex;
+		padding-left: 1rem;
+
+		.sb-toggler {
+			font-size: 2rem;
+			padding: 0;
+		}
+
+		.sb-title {
+			display: flex;
+			align-items: center;
+			margin-right: auto;
+			margin-left: auto;
+			padding: 0;
+
+			h1 {
+				font-size: 2.25rem;
+				line-height: 2.25rem;
+				margin: 0;
+				margin-left: .5rem;
+			}
+
+			img {
+				height: 2.5rem;
+				width: 3rem;
+			}
+		}
+	}
+
+	.dropdown {
+		padding-left: 1rem;
+
+		.sb-link {
+			padding: 0;
+			align-items: center;
+			white-space: normal;
+
+			strong {
+				color: $col-green-50;
+			}
+		}
+	}
+
+	.dropdown-menu {
+		box-shadow: 0 0 .5rem rgba(0, 0, 0, .1);
+
+		.dropdown-item {
+			color: $col-green-50;
+
+			path {
+				fill: $col-green-50;
+			}
+		}
+
+		.active {
+			background-color: $col-green-50;
+
+			.dropdown-item {
+				color: white;
+
+				&:hover {
+					background-color: $col-green-50;
+				}
+
+				path {
+					fill: white;
+				}
+			}
+		}
+	}
+
+	hr.invisible {
+		margin-top: .5rem;
+		margin-bottom: .5rem;
+	}
+}
+
+//
+//	TOASTS					/////
+//
+
+.toast-container {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	padding: 1rem;
+
+	.toast {
+		border-radius: .25rem;
+
+		hr {
+			width: 90%;
+			margin: 0 auto;
+		}
+
+		.toast-header {
+			background-color: transparent;
+			border: none;
+
+			strong {
+				margin-right: auto;
+			}
+
+			svg {
+				margin-right: .25rem;
+			}
+		}
+
+		.toast-body {
+			background-color: transparent;
+			border: none;
+		}
+	}
+
+	.toast-warning {
+		background-color: #f4f0d9;
+	}
+
+	.toast-error {
+		background-color: #f4ddd9;
+	}
+
+	.toast-success {
+		background-color: #def4d9;
+	}
+}
+
+//
+//	TABLE				/////
+//
+
+table {
+
+	th[scope="col"] {
+		color: $col-blue-50;
+	}
+
+	.table-group-divider {
+		border-color: $col-blue-50;
+	}
+
+	.btn {
+		padding: .1rem .5rem;
+	}
+}
+
+//
+//	DISKS				/////
+//
+
+.disk-item {
+	border-radius: .75rem;
+	padding: .5rem;
+	margin: .75rem;
+	box-shadow: 0 0 .3rem rgba(0, 0, 0, .1);
+	background-color: #f6f6f6;
+	transition: all ease-out 200ms;
+	border: $col-green-50 solid .2rem;
+
+	&:hover {
+		background-color: white;
+		box-shadow: 0 0 .7rem $col-green-50;
+		cursor: pointer;
+	}
+}
